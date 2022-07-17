@@ -10,10 +10,17 @@ def randomi (digit: int)  -> list:
     return digits
 
 def input_position() -> list:
-    pos = input("Пожалуйста введите индексы через пробел: ").split()
-    pos_list = [int(i) for i in pos]
+    pos_list = []
+    while (True):
+        pos = input("Для выхода ввода введите пустую строку. Пожалуйста введите индекс ")
+        if pos == "":
+            break
+        elif int(pos) >= len(mul_list):
+            print("Индекс уходит за границу списка. Попробуйте еще раз")
+            continue
+        else:
+            pos_list.append(int(pos))
     return pos_list
-
 
 def multiplication (arr: list, mult: list) -> int:
     multi = 1
