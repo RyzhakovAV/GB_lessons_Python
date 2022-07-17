@@ -11,9 +11,7 @@ def fill_list(number):
 def change_list(arr):
     for i in range(len(arr)-1, -1, -1):
         j = random.randint(0, len(arr)-1)
-        temp = arr[j]
-        arr[j] = arr[i]
-        arr[i] = temp
+        arr[i], arr[j] = arr[j], arr[i]
     return arr
 
 N = int(input("Please, input digit: "))
